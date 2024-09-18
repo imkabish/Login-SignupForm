@@ -3,6 +3,8 @@
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         InitializePlaceholder()
+        Timer1.Interval = 1000
+        Timer1.Start()
     End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
 
@@ -113,4 +115,25 @@ Public Class Form1
             MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
+
+    Private Sub forgetpasslabel_MouseHover(sender As Object, e As EventArgs) Handles forgetpasslabel.MouseHover
+        forgetpasslabel.ForeColor = Color.FromArgb(16, 40, 161)
+    End Sub
+
+    Private Sub forgetpasslabel_MouseLeave(sender As Object, e As EventArgs) Handles forgetpasslabel.MouseLeave
+        forgetpasslabel.ForeColor = Color.FromArgb(69, 128, 230)
+    End Sub
+
+    Private Sub signuplabel_MouseHover(sender As Object, e As EventArgs) Handles signuplabel.MouseHover
+        signuplabel.ForeColor = Color.FromArgb(16, 40, 161)
+    End Sub
+
+    Private Sub signuplabel_MouseLeave(sender As Object, e As EventArgs) Handles signuplabel.MouseLeave
+        signuplabel.ForeColor = Color.FromArgb(69, 128, 230)
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Label1.Text = DateTime.Now.ToString("hh:mm:ss tt")
+    End Sub
+
 End Class
